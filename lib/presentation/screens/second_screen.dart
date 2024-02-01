@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:notification_app/core/constants/my_colors.dart';
 
 class SecondScreen extends StatefulWidget {
-  final String payload;
+  final String? payload;
 
-  const SecondScreen({Key? key, required this.payload})
+  const SecondScreen({Key? key, this.payload})
       : super(key: key);
 
   @override
@@ -19,14 +19,7 @@ class _SecondScreenState extends State<SecondScreen> {
         backgroundColor: MyColors.primaryColor,
         title: const Text("Notification Details"),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            const SizedBox(height: 20),
-            Text(widget.payload, style: TextStyle(fontSize: 20),),
-          ],
-        ),
-      ),
+      body: Center(child: Text(widget.payload!, style: const TextStyle(fontSize: 20),)),
     );
   }
 }

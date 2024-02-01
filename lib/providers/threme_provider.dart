@@ -3,21 +3,21 @@ import 'package:notification_app/core/themes/dark_theme.dart';
 import 'package:notification_app/core/themes/light_theme.dart';
 
 class ThemeProvider extends ChangeNotifier {
-  // initial theme
+  // initial theme will be set to light
   ThemeData _themeData = lightMode;
-  // getter for this theme
+  // getter method for this theme
   ThemeData get themeData => _themeData;
 
   // For dark mode
   bool get isDarkMode => _themeData == darkMode;
 
-  // set the theme
+  // setting the theme
   set themeData(ThemeData themeData) {
     _themeData = themeData;
     notifyListeners();
   }
 
-  // toggle theme mode
+  // toggle the theme
   void toggleTheme() {
     if (_themeData == lightMode) {
       themeData = darkMode;

@@ -24,11 +24,8 @@ if (flutterVersionName == null) {
 
 android {
     namespace "com.example.notification_app"
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 33
     ndkVersion flutter.ndkVersion
-    defaultConfig {
-        multiDexEnabled true
-    }
 
     compileOptions {
         coreLibraryDesugaringEnabled true
@@ -53,6 +50,7 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        multiDexEnabled true
     }
 
     buildTypes {

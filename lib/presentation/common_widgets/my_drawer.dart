@@ -11,12 +11,11 @@ class MyDrawer extends StatelessWidget {
       child: Column(
         children: [
           // App Logo
-          DrawerHeader(
+          const DrawerHeader(
             child: Center(
               child: Icon(
                 Icons.notifications,
                 size: 40,
-                color: Theme.of(context).colorScheme.primary,
               ),
             ),
           ),
@@ -42,7 +41,7 @@ class MyDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SettingsPage()));
+                    MaterialPageRoute(builder: (context) => const SettingsPage()));
               },
             ),
           ),
