@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:notification_app/core/notifications/notification_services.dart';
-import 'package:notification_app/core/routes/routes.dart';
 import 'package:provider/provider.dart';
 import 'package:timezone/data/latest.dart' as tz;
 
@@ -12,7 +11,14 @@ import 'providers/threme_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   tz.initializeTimeZones();
+
+  // final payload = await NotificationService.onClickNotification.first;
+  // print("payload : " + payload);
+  // if (payload != null) {
+  //
+  // }
   runApp(
     MultiProvider(
       providers: [
@@ -25,8 +31,7 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -34,9 +39,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: NotificationService.navigatorKey,
       debugShowCheckedModeBanner: false,
       theme: Provider.of<ThemeProvider>(context).themeData,
-      // initialRoute: '/',
-      // onGenerateRoute: Routes.generateRoute,
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }

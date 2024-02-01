@@ -26,7 +26,7 @@ class _DatePickerButtonState extends State<DatePickerButton> {
           context,
           showTitleActions: true,
           onChanged: (widget.onChanged),
-          onConfirm: (date) {}, // Consider implementing if needed
+          onConfirm: (date) {},
         );
       },
       style: OutlinedButton.styleFrom(

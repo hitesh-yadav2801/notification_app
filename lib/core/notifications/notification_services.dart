@@ -12,14 +12,13 @@ class NotificationService {
   static final GlobalKey<NavigatorState> navigatorKey =
   GlobalKey<NavigatorState>();
 
-  // on tap on a notification
   static void onNotificationTap(NotificationResponse notificationResponse) {
     onClickNotification.add(notificationResponse.payload!);
   }
 
   static Future<void> onNotificationTapBackground(
       NotificationResponse notificationResponse) async {
-    navigatorKey.currentState?.push(
+    navigatorKey.currentState?.pushReplacement(
       MaterialPageRoute(
         builder: (context) =>
             SecondScreen(payload: notificationResponse.payload!),
@@ -67,7 +66,7 @@ class NotificationService {
       id,
       title,
       body,
-      payload: 'Notification clicked',
+      payload: "Payload",
       notificationDetails(),
     );
   }
@@ -92,7 +91,7 @@ class NotificationService {
       uiLocalNotificationDateInterpretation:
       UILocalNotificationDateInterpretation.absoluteTime,
       matchDateTimeComponents: DateTimeComponents.time,
-      payload: 'Notification clicked',
+      payload: "Payload",
     );
   }
 }
